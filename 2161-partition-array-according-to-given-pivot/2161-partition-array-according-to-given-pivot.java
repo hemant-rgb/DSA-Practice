@@ -1,40 +1,25 @@
 class Solution {
     public int[] pivotArray(int[] nums, int pivot) {
-        int n =nums.length;
-        Queue<Integer> smallerEl = new LinkedList<>();
-        Queue<Integer> greaterEl = new LinkedList<>();
-        for(int i=0;i<n;i++){
-            if(nums[i]<pivot){
-                smallerEl.offer(nums[i]);
-            }
-        }
-        int count=0;
-        for(int i=0;i<n;i++){
-            if(nums[i]==pivot){
-                count++;
-            }
-        }
-        for(int i=0;i<n;i++){
-            if(nums[i]>pivot){
-                greaterEl.offer(nums[i]);
-            }
-        }
-        int k=0;
-        while(!smallerEl.isEmpty()){
-            nums[k]=smallerEl.poll();
-            k++;
-        }
-        while(count>0){
-            nums[k]=pivot;
-            k++;
-            count--;
-        }
-          while(!greaterEl.isEmpty()){
-            nums[k]=greaterEl.poll();
-            k++;
-        }
-
-        return nums;
+        int[] result = new int[nums.length];
+        int left = 0, right = nums.length - 1;
         
+        for (int i = 0, j = nums.length - 1; i < nums.length; i++, j--) {
+            if (nums[i] < pivot) {
+                result[left] = nums[i];
+                left++;
+            }
+            
+            if (nums[j] > pivot) {
+                result[right] = nums[j];
+                right--;
+            }
+        }
+        
+        while (left <= right) {
+            result[left] = pivot;
+            left++;
+        }
+        
+        return result;
     }
 }
