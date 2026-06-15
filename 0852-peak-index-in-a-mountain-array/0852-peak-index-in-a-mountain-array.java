@@ -1,18 +1,19 @@
 class Solution {
-    private int helper(int[]arr,int i){
-        if(i==arr.length-1){
-            return i;
-        }else if(arr[i]>arr[i+1]){
-            return i;
-        }else{
-            return helper(arr,i+1);
+    public int peakIndexInMountainArray(int[] arr) {
+        int left=0;
+        int right = arr.length-1;
+
+        while(left<right){
+            int mid = left + (right-left)/2;
+
+            if(arr[mid]<arr[mid+1]){
+                left=mid+1;
+            }else{
+                right=mid;
+            }
         }
 
-        
-
-    }
-    public int peakIndexInMountainArray(int[] arr) {
-        return helper(arr,0);
+        return left;
         
     }
 }
