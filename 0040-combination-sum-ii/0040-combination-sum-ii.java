@@ -12,9 +12,7 @@ class Solution {
         if(target ==0){
             ans.add(new ArrayList<>(curr));
         }
-        if(target<0){
-            return;
-        }
+        
 
         for(int i =start ; i<candidates.length;i++){
             if(i>start && candidates[i]==candidates[i-1]){
