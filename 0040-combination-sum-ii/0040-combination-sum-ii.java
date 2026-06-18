@@ -20,6 +20,9 @@ class Solution {
             if(i>start && candidates[i]==candidates[i-1]){
                 continue;
             }
+            if(candidates[i]>target){
+                break;
+            }
 
             curr.add(candidates[i]);
             backtrack(i+1,target-candidates[i],candidates,ans,curr);
