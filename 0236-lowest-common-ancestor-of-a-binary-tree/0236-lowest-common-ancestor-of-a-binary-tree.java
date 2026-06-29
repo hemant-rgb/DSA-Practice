@@ -21,11 +21,7 @@ class Solution {
             return root;
         }
 
-        if(left!=null){
-            return left;
-        }
-
-        return right;
+        return left !=null ? left : right;
         
     }
 }
