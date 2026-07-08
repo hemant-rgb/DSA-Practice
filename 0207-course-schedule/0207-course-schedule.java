@@ -1,48 +1,43 @@
 class Solution {
-
-    private boolean detectCycle(int node , boolean[]visited, boolean[]pathVisited,ArrayList<Integer>[]graph){
-
-        visited[node]= true;
-        pathVisited[node]= true;
-        for(int neighbour : graph[node]){
-            if(!visited[neighbour]){
-                if(detectCycle(neighbour,visited,pathVisited,graph)){
-                    return true;
-                }
-            }else if (pathVisited[neighbour]){
-                return true;
-            }
-        }
-
-        pathVisited[node]= false;
-        return false;
-    }
-
     public boolean canFinish(int numCourses, int[][] prerequisites) {
-        ArrayList<Integer>[] graph = new ArrayList[numCourses];
-        for(int i=0;i<numCourses;i++){
-            graph[i]= new ArrayList<>();
-        }
+        ArrayList<ArrayList<Integer>> graph = new ArrayList<>();
 
-        for(int [] edge : prerequisites){
+        for(int i=0;i<numCourses;i++){
+            graph.add(new ArrayList<>());
+        }
+        int [] indegree = new int[numCourses];
+        for(int[]edge : prerequisites){
             int pre = edge[1];
             int dep = edge[0];
-            graph[pre].add(dep);
-            
+            graph.get(pre).add(dep);
+            indegree[dep]++;
         }
 
-        boolean [] visited = new boolean[numCourses];
-        boolean [] pathVisited = new boolean[numCourses];
-
-        for(int i =0;i< graph.length;i++){
-            if(!visited[i]){
-                if(detectCycle(i,visited,pathVisited,graph)){
-                    return false;
-                }
+        Queue<Integer> q = new LinkedList<>();
+        for(int i=0;i<numCourses;i++){
+            if(indegree[i]==0){
+                q.offer(i);
             }
         }
 
-        return true;
+        int count=0;
+
+        while(!q.isEmpty()){
+            int node = q.poll();
+            count++;
+
+            for(int neighbour: graph.get(node)){
+                indegree[neighbour]--;
+                if(indegree[neighbour]==0){
+                    q.offer(neighbour);
+
+                }
+
+            }
+        }
+
+        return count == numCourses;
+
         
     }
 }
