@@ -1,46 +1,41 @@
 class Solution {
 
-    public int[] findRedundantConnection(int[][] edges) {
-        int n = edges.length;
-        int[]parent = new int[n+1];
-        int[]rank = new int[n+1];
-        for(int i=0;i<=n;i++){
-            parent[i]=i;
+    private boolean dfs(int src, int dest, ArrayList<ArrayList<Integer>> graph,boolean[]visited){
+        if(src==dest){
+            return true;
         }
+        visited[src]= true;
 
-        for(int[]edge : edges){
-            int u = edge[0];
-            int v = edge[1];
-            if(!union(u,v,parent,rank)){
-                return edge;
+        for(int neighbour : graph.get(src)){
+            if(!visited[neighbour]){
+                if(dfs(neighbour,dest,graph,visited)){
+                    return true;
+                }
             }
         }
+
+        return false;
+    }
+    public int[] findRedundantConnection(int[][] edges) {
+        ArrayList<ArrayList<Integer>> graph = new ArrayList<>();
+        for(int i=0;i<=edges.length;i++){
+            graph.add(new ArrayList<>());
+        }
+        
+        
+        for(int []edge: edges){
+            int u = edge[0];
+            int v = edge[1];
+            boolean[] visited = new boolean[edges.length+1];
+
+            if(!graph.get(u).isEmpty() && !graph.get(v).isEmpty() && dfs(u,v,graph,visited)){
+                return edge;
+            }
+
+            graph.get(u).add(v);
+            graph.get(v).add(u);
+        }
+
         return new int[]{};
-    }
-     private int find(int node, int[] parent) {
-
-        if (parent[node] != node) {
-            parent[node] = find(parent[node], parent);
-        }
-
-        return parent[node];
-    }
-
-    public boolean union(int u , int v , int[]parent , int[]rank){
-        int paru = find(u,parent);
-        int parv = find(v,parent);
-        if(paru == parv){
-            return false;
-        }
-
-        if(rank[paru]>rank[parv]){
-            parent[parv]=paru;
-        }else if(rank[paru]<rank[parv]){
-            parent[paru]=parv;
-        }else{
-            parent[paru]=parv;
-            rank[parv]++;
-        }
-        return true;
     }
 }
