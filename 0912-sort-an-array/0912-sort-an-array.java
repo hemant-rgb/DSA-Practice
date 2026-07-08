@@ -1,41 +1,42 @@
 class Solution {
+
+    private void heapify(int[]nums,int n , int i){
+        int largest =i;
+        int left = 2*i+1;
+        int right = 2*i+2;
+
+        if(left<n && nums[left]>nums[largest]){
+            largest = left;
+        }
+        if(right<n && nums[right]>nums[largest]){
+            largest = right;
+        }
+
+        if(largest !=i){
+            int temp = nums[i];
+            nums[i]= nums[largest];
+            nums[largest]= temp;
+
+            heapify(nums,n,largest);
+        }
+
+    }
     public int[] sortArray(int[] nums) {
-        mergeSort(0,nums.length-1,nums);
+        int n = nums.length;
+        for(int i=n/2-1;i>=0;i--){
+            heapify(nums,n,i);
+        }
+
+        for(int i=n-1;i>0;i--){
+            int temp = nums[0];
+            nums[0]= nums[i];
+            nums[i]=temp;
+
+            heapify(nums,i,0);
+
+        }
 
         return nums;
+        
     }
-    private void mergeSort(int low , int high , int[]nums){
-        if(low>=high)return;
-        int mid = low + (high-low)/2;
-        mergeSort(low,mid,nums);
-        mergeSort(mid+1,high,nums);
-        merge(low,mid,high,nums);
-    }
-
-    private void merge(int low, int mid , int high,int[]nums){
-        int []temp = new int[high-low+1];
-        int i = low ;
-        int j = mid+1;
-        int k=0;
-        while(i<=mid &&j<=high){
-            if(nums[i]<=nums[j]){
-                temp[k++]=nums[i++];
-            }else{
-                temp[k++]=nums[j++];
-            }
-
-        }
-        while(i<=mid){
-            temp[k++]=nums[i++];
-        }
-        while(j<=high){
-            temp[k++]=nums[j++];
-        }
-
-        for(int p=0;p<temp.length;p++){
-            nums[low+p]= temp[p];
-        }
-    }
-
-
 }
