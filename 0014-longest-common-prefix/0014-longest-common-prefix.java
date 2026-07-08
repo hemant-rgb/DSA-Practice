@@ -1,55 +1,20 @@
 class Solution {
-    class Node{
-        Node[] children = new Node[26];
-        boolean eow;
-        
-    }
-    Node root = new Node();
-    private void insert(String word){
-        Node curr = root;
-        for(char ch : word.toCharArray()){
-            int idx = ch-'a';
-            if(curr.children[idx]==null){
-                curr.children[idx]= new Node();
-            }
-            curr = curr.children[idx];
-        }
-
-        curr.eow = true;
-
-    }
-
     public String longestCommonPrefix(String[] strs) {
-        for(String word : strs){
-            insert(word);
+        if(strs == null || strs.length ==0){
+            return "";
         }
 
-        Node curr = root;
-        int count =0;
-
-        String word = strs[0];
-        StringBuilder sb = new StringBuilder();
-        for(char ch : word.toCharArray()){
-            if(curr.eow){
-                break;
+        String prefix = strs[0];
+        for(int i=1;i<strs.length;i++){
+            while(!strs[i].startsWith(prefix)){
+                prefix = prefix.substring(0,prefix.length()-1);
             }
-            count=0;
-            for(int j=0;j<26;j++){
-                if(curr.children[j]!=null){
-                    count++;
-                }
-                
+            if(prefix.isEmpty()){
+                return "";
             }
-            if(count>1){
-                break;
-            }
-            int idx = ch -'a';
-            sb.append(ch);
-            curr = curr.children[idx];
-
         }
 
-        return sb.toString();
+        return prefix;
         
     }
 }
