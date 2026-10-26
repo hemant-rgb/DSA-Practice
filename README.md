@@ -52,6 +52,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0099-recover-binary-search-tree](https://github.com/hemant-rgb/DSA-Practice/tree/master/0099-recover-binary-search-tree) |
 | [0235-lowest-common-ancestor-of-a-binary-search-tree](https://github.com/hemant-rgb/DSA-Practice/tree/master/0235-lowest-common-ancestor-of-a-binary-search-tree) |
 | [0653-two-sum-iv-input-is-a-bst](https://github.com/hemant-rgb/DSA-Practice/tree/master/0653-two-sum-iv-input-is-a-bst) |
+| [0787-cheapest-flights-within-k-stops](https://github.com/hemant-rgb/DSA-Practice/tree/master/0787-cheapest-flights-within-k-stops) |
 | [2476-closest-nodes-queries-in-a-binary-search-tree](https://github.com/hemant-rgb/DSA-Practice/tree/master/2476-closest-nodes-queries-in-a-binary-search-tree) |
 ## Binary Lifting
 |  |
@@ -90,4 +91,21 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0653-two-sum-iv-input-is-a-bst](https://github.com/hemant-rgb/DSA-Practice/tree/master/0653-two-sum-iv-input-is-a-bst) |
+| [0787-cheapest-flights-within-k-stops](https://github.com/hemant-rgb/DSA-Practice/tree/master/0787-cheapest-flights-within-k-stops) |
+## Dynamic Programming
+|  |
+| ------- |
+| [0787-cheapest-flights-within-k-stops](https://github.com/hemant-rgb/DSA-Practice/tree/master/0787-cheapest-flights-within-k-stops) |
+## Graph Theory
+|  |
+| ------- |
+| [0787-cheapest-flights-within-k-stops](https://github.com/hemant-rgb/DSA-Practice/tree/master/0787-cheapest-flights-within-k-stops) |
+## Heap (Priority Queue)
+|  |
+| ------- |
+| [0787-cheapest-flights-within-k-stops](https://github.com/hemant-rgb/DSA-Practice/tree/master/0787-cheapest-flights-within-k-stops) |
+## Shortest Path
+|  |
+| ------- |
+| [0787-cheapest-flights-within-k-stops](https://github.com/hemant-rgb/DSA-Practice/tree/master/0787-cheapest-flights-within-k-stops) |
 <!---LeetCode Topics End-->
