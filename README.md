@@ -54,6 +54,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0547-number-of-provinces](https://github.com/hemant-rgb/DSA-Practice/tree/master/0547-number-of-provinces) |
 | [0653-two-sum-iv-input-is-a-bst](https://github.com/hemant-rgb/DSA-Practice/tree/master/0653-two-sum-iv-input-is-a-bst) |
 | [0787-cheapest-flights-within-k-stops](https://github.com/hemant-rgb/DSA-Practice/tree/master/0787-cheapest-flights-within-k-stops) |
+| [1319-number-of-operations-to-make-network-connected](https://github.com/hemant-rgb/DSA-Practice/tree/master/1319-number-of-operations-to-make-network-connected) |
 | [2476-closest-nodes-queries-in-a-binary-search-tree](https://github.com/hemant-rgb/DSA-Practice/tree/master/2476-closest-nodes-queries-in-a-binary-search-tree) |
 ## Binary Lifting
 |  |
@@ -94,6 +95,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0547-number-of-provinces](https://github.com/hemant-rgb/DSA-Practice/tree/master/0547-number-of-provinces) |
 | [0653-two-sum-iv-input-is-a-bst](https://github.com/hemant-rgb/DSA-Practice/tree/master/0653-two-sum-iv-input-is-a-bst) |
 | [0787-cheapest-flights-within-k-stops](https://github.com/hemant-rgb/DSA-Practice/tree/master/0787-cheapest-flights-within-k-stops) |
+| [1319-number-of-operations-to-make-network-connected](https://github.com/hemant-rgb/DSA-Practice/tree/master/1319-number-of-operations-to-make-network-connected) |
 ## Dynamic Programming
 |  |
 | ------- |
@@ -103,6 +105,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0547-number-of-provinces](https://github.com/hemant-rgb/DSA-Practice/tree/master/0547-number-of-provinces) |
 | [0787-cheapest-flights-within-k-stops](https://github.com/hemant-rgb/DSA-Practice/tree/master/0787-cheapest-flights-within-k-stops) |
+| [1319-number-of-operations-to-make-network-connected](https://github.com/hemant-rgb/DSA-Practice/tree/master/1319-number-of-operations-to-make-network-connected) |
 ## Heap (Priority Queue)
 |  |
 | ------- |
@@ -115,4 +118,5 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0547-number-of-provinces](https://github.com/hemant-rgb/DSA-Practice/tree/master/0547-number-of-provinces) |
+| [1319-number-of-operations-to-make-network-connected](https://github.com/hemant-rgb/DSA-Practice/tree/master/1319-number-of-operations-to-make-network-connected) |
 <!---LeetCode Topics End-->
